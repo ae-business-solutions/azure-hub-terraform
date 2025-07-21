@@ -121,6 +121,7 @@ resource "azurerm_linux_virtual_machine" "firewall" {
     storage_account_type = "Standard_LRS"
   }
 
+  # https://docs.paloaltonetworks.com/vm-series/10-1/vm-series-deployment/bootstrap-the-vm-series-firewall/create-the-init-cfgtxt-file/init-cfgtxt-file-components
   custom_data = base64encode("type=dhcp-client;vm-auth-key=;op-cmd-dpdk-pkt-io=yes;dhcp-send-hostname=yes;dhcp-send-client-id=yes;dhcp-accept-server-hostname=yes;dhcp-accept-server-domain=yes")
 
   boot_diagnostics {}
